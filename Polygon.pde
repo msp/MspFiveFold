@@ -6,9 +6,10 @@ class Polygon {
   protected float cy;
   protected float w;
   protected float h;
+  protected float time, speed;
   protected float startAngle;
 
-  public Polygon(int _sides, int _x, int _y, int _rotation) {
+  public Polygon(int _sides, float _x, float _y, int _rotation, float _speed) {
     n = _sides;
     startAngle = -PI / 2;
     w = 100;
@@ -16,6 +17,8 @@ class Polygon {
     cx = _x;
     cy = _y;
     rotation = _rotation;
+    speed = _speed;
+    time = 0;
   }
 
   void draw(int _rotation) {
@@ -26,15 +29,14 @@ class Polygon {
   void draw()
   {
     float angle = TWO_PI/ n;
-    /* The "radius" is one half the total width and height */
-    w = w / 2.0;
-    h = h / 2.0;
+    float sz = map(sin(time), -1, 1, 5, 15);
+    w = sz;
+    h = sz;
 
     pushMatrix();
-    translate(cx, cy);
-    
-    rotate(radians(rotation));
-    
+    translate(cx, cy);    
+    rotate(radians(rotation));   
+
     beginShape();
     for (int i = 0; i < n; i++)
     {
@@ -44,6 +46,8 @@ class Polygon {
     endShape(CLOSE);
     
     popMatrix();
+    
+    time = time + speed;
   }
 }
 

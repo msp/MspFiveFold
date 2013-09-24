@@ -2,4 +2,8 @@ h1. MspFiveFold
 
 Run in "Processing":http://processing.org (2.0b7). Needs the "Minim":http://code.compartmental.net/tools/minim/ library (2.1.0 BETA).
 
-Just playing with audio analysis and polygons.
+Just playing with <del>audio analysis<del>[1] and polygons.
+
+Have a "looksie in your browser":https://rawgithub.com/msp/MspFiveFold/master/web-export/index.html, tested in Chrome & Safari.
+
+[1] Not in the web/Processing JS version!
